@@ -33,20 +33,3 @@ The brain contains approximately 85 billion neurons, which form an immense numbe
 
 When the brain learns, it adjusts the weights and biases of these connections based on experiences and information. This process is dynamic and ongoing, enabling the brain to continuously adapt and optimize its performance. The sheer number of neurons and connections creates a highly sophisticated and flexible system capable of complex thought, learning, and memory formation.
 
-The brain operates with an extraordinarily complex system of billions of neurons, where the function can be approximated as:
-
-$$
- \text{Output} = F(\text{weights} \cdot \text{inputs} + \text{biases}) = A x^N + B x^{N-1} + C x^{N-2} + \ldots + W x^2 + Y x + Z 
-$$
-
-1. **Weights and Inputs**: Each neuron receives multiple inputs, each associated with a weight. The weighted sum of these inputs, plus a bias, determines the neuron's output.
-   
-2. **Function \(F\)**: This represents the activation function, which processes the weighted sum of inputs and biases to produce the neuron's final output. The activation function could be nonlinear, allowing for complex and adaptive behavior.
-
-3. **Polynomial Representation**: The polynomial representation
-
-$$ \(A x^N + B x^{N-1} + C x^{N-2} + \ldots + W x^2 + Y x + Z\) $$
-
-is a simplified way to illustrate how different weights and biases contribute to the final output. In this polynomial, \(x\) represents the input, and the coefficients \(A, B, C, \ldots, Z\) represent the weights and biases.
-
-The exact order of terms (e.g., \(x^{1,000,000,000}\)) is a metaphorical representation to convey the vast number of connections and their complexity, rather than literal polynomial terms. In reality, the actual structure of the brain’s processing is not literally polynomial but involves highly intricate interactions among billions of neurons and their synaptic connections.
