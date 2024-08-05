@@ -7,9 +7,12 @@ For many years, the process by which the brain learns remained a mystery. The pr
 When we learn something new, neural pathways are either strengthened or weakened based on the frequency and intensity of the signals passing through them. This process is known as synaptic plasticity. The more a particular pathway is used, the stronger the connections become, making the signal transmission more efficient. Conversely, pathways that are rarely used may weaken over time.
 
 This mechanism is crucial for various types of learning and memory formation, enabling the brain to adapt and reorganize itself in response to new information, experiences, and even injury. By understanding these processes, researchers can develop more effective artificial neural networks and enhance our comprehension of human cognition and neural disorders.
-The main formula behind the neural connections in the brain that facilitate learning can be expressed as:
 
-\[ \text{Output} = w \cdot \text{input} + \text{bias} \]
+**The main formula behind the neural connections in the brain that facilitate learning can be expressed as:**
+
+$$
+ \text{Output} = w \cdot \text{input} + \text{bias} 
+$$
 
 ### Explanation:
 
