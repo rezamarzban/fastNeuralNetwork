@@ -202,70 +202,54 @@ $$ W_1 = \begin{bmatrix}
    w_{51} & w_{52} & w_{53}
    \end{bmatrix} $$
    
-   \[
-   b_1 = \begin{bmatrix}
+$$ b_1 = \begin{bmatrix}
    b_{11} \\
    b_{12} \\
    b_{13}
-   \end{bmatrix}
-   \]
+   \end{bmatrix} $$
 
 4. **Weights and biases for the output layer (from the hidden layer to the output layer):**
-   \[
-   W_2 = \begin{bmatrix}
+
+$$ W_2 = \begin{bmatrix}
    w_{h1y1} & w_{h1y2} \\
    w_{h2y1} & w_{h2y2} \\
    w_{h3y1} & w_{h3y2}
-   \end{bmatrix}
-   \]
-   \[
-   b_2 = \begin{bmatrix}
+   \end{bmatrix} $$
+
+$$ b_2 = \begin{bmatrix}
    b_{21} \\
    b_{22}
-   \end{bmatrix}
-   \]
+   \end{bmatrix} $$
 
 #### Hidden Layer Activations:
 Let \( h_1, h_2, h_3 \) be the activations of the hidden layer neurons. These are calculated as:
-\[
-h_1 = f(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11})
-\]
-\[
-h_2 = f(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12})
-\]
-\[
-h_3 = f(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13})
-\]
+
+$$ h_1 = f(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) $$
+
+$$ h_2 = f(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) $$
+
+$$ h_3 = f(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) $$
+
 where \( f \) is the activation function (e.g., ReLU).
 
 #### Output Layer Calculations:
 Using the hidden layer activations, the outputs \( y_1 \) and \( y_2 \) are computed as:
-\[
-y_1 = w_{h1y1}h_1 + w_{h2y1}h_2 + w_{h3y1}h_3 + b_{21}
-\]
-\[
-y_2 = w_{h1y2}h_1 + w_{h2y2}h_2 + w_{h3y2}h_3 + b_{22}
-\]
+
+$$ y_1 = w_{h1y1}h_1 + w_{h2y1}h_2 + w_{h3y1}h_3 + b_{21} $$
+
+$$ y_2 = w_{h1y2}h_1 + w_{h2y2}h_2 + w_{h3y2}h_3 + b_{22} $$
 
 Substituting the hidden layer activations into these equations:
 
-\[
-y_1 = w_{h1y1} \cdot f(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y1} \cdot f(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y1} \cdot f(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{21}
-\]
+$$ y_1 = w_{h1y1} \cdot f(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y1} \cdot f(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y1} \cdot f(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{21} $$
 
-\[
-y_2 = w_{h1y2} \cdot f(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y2} \cdot f(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y2} \cdot f(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{22}
-\]
+$$ y_2 = w_{h1y2} \cdot f(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y2} \cdot f(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y2} \cdot f(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{22} $$
 
 #### Simplified Form:
 For clarity, if we assume \( f \) is an identity function (no activation), the equations reduce to:
 
-\[
-y_1 = w_{h1y1}(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y1}(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y1}(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{21}
-\]
+$$ y_1 = w_{h1y1}(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y1}(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y1}(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{21} $$
 
-\[
-y_2 = w_{h1y2}(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y2}(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y2}(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{22}
-\]
+$$ y_2 = w_{h1y2}(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y2}(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y2}(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{22} $$
 
 These equations show how the outputs \( y_1 \) and \( y_2 \) are calculated as linear combinations of the inputs, with weights and biases playing the role of parameters in this complex mapping function.
