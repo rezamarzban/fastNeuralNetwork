@@ -147,7 +147,7 @@ $$ y = g(W_{2} \cdot h + b_{2}) $$
 
 $$ 15 + 3 + 6 + 2 = 26 \text{ parameters} $$
 
-Here’s the code with TensorFlow module to define, compile, and summarize the neural network model as described:
+Here’s the code with TensorFlow module to define, compile, and summarize the neural network model as described `simpleNN_TF.ipynb`:
 
 ```python
 import tensorflow as tf
