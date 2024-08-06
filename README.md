@@ -341,7 +341,7 @@ Because TensorFlow is a high-level programming module that abstracts much of the
 
 By following these steps with a basic NumPy implementation, one can gain a deeper understanding of the fundamental operations involved in training and testing a neural network.
 
-Here is a simple code example for creating, training, and testing a neural network using only NumPy, as previously explained.
+Here is a code for creating, training, and testing a simple neural network using only NumPy, as previously explained.
 
 Neural Network Implementation with NumPy `simpleNN_num.py`:
 
