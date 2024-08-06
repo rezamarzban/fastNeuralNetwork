@@ -140,8 +140,10 @@ $$ y = g(W_{2} \cdot h + b_{2}) $$
  $$ 3 \text{ neurons} \times 2 \text{ outputs} = 6 \text{ weights} $$
  
 - **Biases for Output Layer:**
-  \( 2 \text{ biases} \)
+
+ $$ 2 \text{ biases} $$
 
 **Total Weights and Biases:**
-  \( 15 + 3 + 6 + 2 = 26 \text{ parameters} \)
+
+$$ 15 + 3 + 6 + 2 = 26 \text{ parameters} $$
 
