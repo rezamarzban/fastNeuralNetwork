@@ -147,3 +147,30 @@ $$ y = g(W_{2} \cdot h + b_{2}) $$
 
 $$ 15 + 3 + 6 + 2 = 26 \text{ parameters} $$
 
+Here’s the code with TensorFlow module to define, compile, and summarize the neural network model as described:
+
+```python
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+# Define the model
+model = Sequential([
+    Dense(3, input_shape=(5,), activation='relu', name='hidden_layer'),  # Hidden layer with 3 neurons
+    Dense(2, activation='linear', name='output_layer')  # Output layer with 2 neurons
+])
+
+# Compile the model
+model.compile(optimizer='adam', loss='mean_squared_error')
+
+# Print the model summary
+model.summary()
+```
+
+- **Model Definition:** A `Sequential` model is used with two `Dense` layers:
+  - The first `Dense` layer has 3 neurons, uses ReLU activation, and takes an input shape of 5 (for the 5 input features).
+  - The second `Dense` layer has 2 neurons with a linear activation function for the output.
+  
+- **Compile:** The model is compiled with the Adam optimizer and mean squared error loss function.
+
+- **Summary:** `model.summary()` prints the model architecture, including the number of parameters and layer details.
