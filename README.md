@@ -252,4 +252,60 @@ $$ y_1 = w_{h1y1}(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_
 
 $$ y_2 = w_{h1y2}(w_{11}x_1 + w_{21}x_2 + w_{31}x_3 + w_{41}x_4 + w_{51}x_5 + b_{11}) + w_{h2y2}(w_{12}x_1 + w_{22}x_2 + w_{32}x_3 + w_{42}x_4 + w_{52}x_5 + b_{12}) + w_{h3y2}(w_{13}x_1 + w_{23}x_2 + w_{33}x_3 + w_{43}x_4 + w_{53}x_5 + b_{13}) + b_{22} $$
 
-These equations show how the outputs \( y1 \) and \( y2 \) are calculated as linear combinations of the inputs, with weights and biases playing the role of parameters in this complex mapping function.
+These equations show how the outputs \( y1 \) and \( y2 \) are calculated as linear combinations of the inputs, with weights and biases playing the role of parameters in this complex mapping function. In the brain, this function is very complex, resembling a high-order polynomial mapping. Since we have established the creation of the neural network, it is now time to train and test the simple neural network with TensorFlow module:
+
+```python
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.optimizers import Adam
+import numpy as np
+
+# Define the model
+model = Sequential([
+    Dense(3, input_shape=(5,), activation='relu', name='hidden_layer'),  # Hidden layer with 3 neurons
+    Dense(2, activation='linear', name='output_layer')  # Output layer with 2 neurons
+])
+
+# Compile the model
+model.compile(optimizer=Adam(), loss='mean_squared_error')
+
+# Generate some dummy data for training and testing
+# Inputs (features)
+X_train = np.random.rand(1000, 5)
+X_test = np.random.rand(200, 5)
+
+# Outputs (targets)
+y_train = np.random.rand(1000, 2)
+y_test = np.random.rand(200, 2)
+
+# Train the model
+model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+
+# Evaluate the model
+loss = model.evaluate(X_test, y_test)
+print(f'Test loss: {loss}')
+
+# Print the model summary
+model.summary()
+```
+
+1. **Model Definition:**
+   - A `Sequential` model with a hidden layer of 3 neurons (ReLU activation) and an output layer of 2 neurons (linear activation).
+
+2. **Compilation:**
+   - The model is compiled with the Adam optimizer and mean squared error loss function.
+
+3. **Data Generation:**
+   - Dummy data for training and testing is generated using NumPy. The training set has 1000 samples, and the test set has 200 samples, each with 5 features.
+
+4. **Training:**
+   - The model is trained for 10 epochs with a batch size of 32. Validation data is also provided for testing during training.
+
+5. **Evaluation:**
+   - The model is evaluated on the test set, and the test loss is printed.
+
+6. **Model Summary:**
+   - The model summary is printed, showing the architecture and parameters.
+
+This completes the process of creating, training, and testing the simple neural network with TensorFlow module.
