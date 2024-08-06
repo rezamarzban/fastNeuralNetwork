@@ -2,7 +2,7 @@
 Fast Neural Network with pure numpy, numba, cupy, cpp and etc
 
 Artificial neural network applications are often programmed using TensorFlow and similar modules. When programming with these modules, only high-level commands are visible, and the details of the underlying processes are not apparent. Few people truly understand what a neural network is, as most are only programming with high-level languages.
-For many years, the process by which the brain learns remained a mystery. The primary mechanism of learning in the brain is through the adjustment of synaptic weights at the connections between neurons. These synaptic weights determine the strength of the signal transmitted from one neuron to another. 
+For many years, the process by which the brain learns remained a mystery. **The primary mechanism of learning in the brain is through the adjustment of synaptic weights at the connections between neurons.** These synaptic weights determine the strength of the signal transmitted from one neuron to another. 
 
 When we learn something new, neural pathways are either strengthened or weakened based on the frequency and intensity of the signals passing through them. This process is known as synaptic plasticity. The more a particular pathway is used, the stronger the connections become, making the signal transmission more efficient. Conversely, pathways that are rarely used may weaken over time.
 
