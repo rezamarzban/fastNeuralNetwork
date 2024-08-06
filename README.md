@@ -110,25 +110,35 @@ $$ b_{2} = \begin{bmatrix}
 #### Calculating the Output
 
 1. **Hidden Layer Activation:**
-   \[
-   h = f(W_{1} \cdot x + b_{1})
-   \]
-   Where \( x \) is the input vector \( \begin{bmatrix} x_1 & x_2 & x_3 & x_4 & x_5 \end{bmatrix}^T \) and \( f \) is the activation function (e.g., ReLU, sigmoid).
 
-2. **Output Layer Activation:**
-   \[
-   y = g(W_{2} \cdot h + b_{2})
-   \]
+$$ h = f(W_{1} \cdot x + b_{1}) $$
+
+   Where \( x \) is the input vector:
+   
+   $$ \begin{bmatrix} x_1 & x_2 & x_3 & x_4 & x_5 \end{bmatrix}^T $$
+   
+   and \( f \) is the activation function (e.g., ReLU, sigmoid).
+
+3. **Output Layer Activation:**
+
+$$ y = g(W_{2} \cdot h + b_{2}) $$
+
    Where \( h \) is the hidden layer output vector and \( g \) is the activation function for the output layer (often softmax for classification or linear for regression).
 
-### Number of Weights and Biases
+#### Number of Weights and Biases
 
 - **Weights between Input and Hidden Layer:**
-  \( 5 \text{ inputs} \times 3 \text{ neurons} = 15 \text{ weights} \)
+
+ $$ 5 \text{ inputs} \times 3 \text{ neurons} = 15 \text{ weights} $$
+  
 - **Biases for Hidden Layer:**
-  \( 3 \text{ biases} \)
+
+ $$ 3 \text{ biases} $$
+ 
 - **Weights between Hidden and Output Layer:**
-  \( 3 \text{ neurons} \times 2 \text{ outputs} = 6 \text{ weights} \)
+
+ $$ 3 \text{ neurons} \times 2 \text{ outputs} = 6 \text{ weights} $$
+ 
 - **Biases for Output Layer:**
   \( 2 \text{ biases} \)
 
