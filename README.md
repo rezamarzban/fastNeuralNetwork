@@ -39,7 +39,7 @@ Formally, this can be described as:
 
 $$ (y1, y2, ..., ym) = F(x1, x2, ..., xn) $$
 
-The function \( F \) represents the combined effect of many neurons, each applying a weighted sum of inputs plus a bias, followed by an activation function. This process can be incredibly complex, involving billions of parameters (weights and biases), making the brain's mapping function analogous to a polynomial of a very high order, possibly in the range of billions.
+The function \( F \) represents the combined effect of many neurons, each applying a weighted sum of inputs plus a bias, followed by an activation function. This process can be incredibly complex, **involving billions of parameters (weights and biases), making the brain's mapping function analogous to a polynomial of a very high order, possibly in the range of billions.**
 
 In neural network terms, this can be broken down as follows:
 
