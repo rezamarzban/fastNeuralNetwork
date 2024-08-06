@@ -563,7 +563,7 @@ if __name__ == "__main__":
 
 This script demonstrates the creation, training, and testing of a simple neural network using CuPy. The code is designed to be faster than using Numba alone.
 
-Neural Network Implementation with CuPy simpleNN_cu.py:
+Neural Network Implementation with CuPy `simpleNN_cu.py`:
 
 ```
 import cupy as cp
