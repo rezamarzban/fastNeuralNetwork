@@ -50,6 +50,8 @@ In neural network terms, this can be broken down as follows:
 
 This intricate process allows the brain to perform a wide array of tasks, from simple reflexes to complex problem-solving and decision-making.
 
+# simple Neural Network example 
+
 Let's break down the brain's function with a simplified neural network example, using the given inputs, neurons, and outputs. We'll consider a neural network with one hidden layer for simplicity.
 
 #### Inputs and Neurons
