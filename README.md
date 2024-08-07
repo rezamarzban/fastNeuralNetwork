@@ -312,7 +312,7 @@ model.summary()
 6. **Model Summary:**
    - The model summary is printed, showing the architecture and parameters.
 
-This completes the process of creating, training, and testing the simple neural network with TensorFlow module.
+This completes the process of creating, training, and testing the simple neural network with TensorFlow module. In continuation, this simple neural network will be created, trained, and tested using numpy, numba, cupy, and C++. The benefits of these modules include higher speed compared to TensorFlow and PyTorch, and the ability to implement it with fewer lines of code in a single Python file.
 
 # Neural Network with Numpy
 
@@ -657,3 +657,7 @@ predictions = predict(X)
 accuracy = cp.mean(predictions == y)
 print(f'Accuracy: {accuracy}')
 ```
+
+# Projects
+
+`MNIST_Class`: AI, neural networks and handwriting recognition using MNIST datasets only with numpy, numba, cupy, C++ and etc without TensorFlow and PyTorch.
