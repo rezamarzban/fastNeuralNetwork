@@ -660,4 +660,4 @@ print(f'Accuracy: {accuracy}')
 
 # Projects
 
-`MNIST_Class`: AI, neural networks and handwriting recognition using MNIST datasets only with numpy, numba, cupy, C++ and etc without TensorFlow and PyTorch.
+`MNIST_Class`: AI, classifying images neural networks and handwriting recognition using MNIST datasets only with numpy, numba, cupy, C++ and etc without TensorFlow and PyTorch.
