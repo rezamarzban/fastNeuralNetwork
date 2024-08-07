@@ -183,7 +183,7 @@ Parameters saved in a neural network model, such as weights and biases, are anal
 
 In summary:
 
-The neural network model parameters (weights and biases) function similarly to the synapses in the brain. They define a mapping function \( F \) such that:
+**The neural network model parameters (weights and biases) function similarly to the synapses in the brain.** They define a mapping function \( F \) such that:
 
 $$ (y1, y2) = F(x1, x2, x3, x4, x5) $$
 
