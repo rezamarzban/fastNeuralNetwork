@@ -179,7 +179,7 @@ model.summary()
 
 - **Summary:** `model.summary()` prints the model architecture, including the number of parameters and layer details.
 
-Parameters saved in a neural network model, such as weights and biases, are analogous to the synaptic strengths in the brain. These parameters define the mapping function \( F \) that transforms the inputs \( (x1, x2, x3, x4, x5) \) to the outputs \( (y1, y2) \). This transformation can be thought of as a complex polynomial function.
+**Parameters saved in a neural network model, such as weights and biases, are analogous to the synaptic strengths in the brain.** These parameters define the mapping function \( F \) that transforms the inputs \( (x1, x2, x3, x4, x5) \) to the outputs \( (y1, y2) \). This transformation can be thought of as a complex polynomial function.
 
 In summary:
 
