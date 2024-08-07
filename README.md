@@ -52,7 +52,9 @@ This intricate process allows the brain to perform a wide array of tasks, from s
 
 # simple Neural Network example 
 
-Let's break down the brain's function with a simplified neural network example, using the given inputs, neurons, and outputs. We'll consider a neural network with one hidden layer for simplicity.
+Let's break down the brain's function with a simplified neural network example, using the given inputs, neurons, and outputs. We'll consider a neural network with one hidden layer for simplicity:
+
+![simpleNN](simpleNN.png)
 
 #### Inputs and Neurons
 
