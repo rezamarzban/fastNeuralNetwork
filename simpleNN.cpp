@@ -156,14 +156,14 @@ int main() {
     std::vector<std::vector<float>> outputs = {
         {0, 1},
         {1, 0},
-        {1, 1},
+        {1, 0},
         {0, 1},
         {1, 0},
-        {1, 1},
         {0, 1},
         {0, 1},
-        {1, 1},
-        {0, 0}
+        {0, 1},
+        {1, 0},
+        {0, 1}
     };
     
     // Training the network and printing loss
