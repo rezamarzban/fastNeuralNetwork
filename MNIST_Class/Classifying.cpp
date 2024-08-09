@@ -218,7 +218,7 @@ int main() {
             nn.backward(train_inputs[i], train_outputs[i], learning_rate);
             total_loss += nn.calculate_loss(train_outputs[i]);
         }
-        if (epoch % 100 == 0) {
+        if (epoch % 2 == 0) {
             std::cout << "Epoch " << epoch << ", Loss: " << total_loss / train_inputs.size() << std::endl;
         }
     }
