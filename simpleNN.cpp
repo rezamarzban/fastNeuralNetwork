@@ -14,7 +14,7 @@ float sigmoid_derivative(float x) {
     return x * (1.0 - x);
 }
 
-// Function to generate random weights
+// Function to generate random weights and biases
 float random_weight() {
     return (float)rand() / RAND_MAX * 2.0f - 1.0f;
 }
@@ -49,12 +49,16 @@ private:
     std::vector<std::vector<float>> weights_hidden_output;
     std::vector<float> hidden_layer;
     std::vector<float> output_layer;
+    std::vector<float> bias_hidden;   // Biases for hidden layer
+    std::vector<float> bias_output;   // Biases for output layer
 };
 
 NeuralNetwork::NeuralNetwork(int inputSize, int hiddenSize, int outputSize) {
     srand(time(0));
     weights_input_hidden.resize(inputSize, std::vector<float>(hiddenSize));
     weights_hidden_output.resize(hiddenSize, std::vector<float>(outputSize));
+    bias_hidden.resize(hiddenSize);
+    bias_output.resize(outputSize);
     
     for (int i = 0; i < inputSize; ++i) {
         for (int j = 0; j < hiddenSize; ++j) {
@@ -68,13 +72,21 @@ NeuralNetwork::NeuralNetwork(int inputSize, int hiddenSize, int outputSize) {
         }
     }
     
+    for (int i = 0; i < hiddenSize; ++i) {
+        bias_hidden[i] = random_weight();
+    }
+    
+    for (int i = 0; i < outputSize; ++i) {
+        bias_output[i] = random_weight();
+    }
+    
     hidden_layer.resize(hiddenSize);
     output_layer.resize(outputSize);
 }
 
 std::vector<float> NeuralNetwork::forward(const std::vector<float>& input) {
     for (int i = 0; i < hidden_layer.size(); ++i) {
-        hidden_layer[i] = 0.0f;
+        hidden_layer[i] = bias_hidden[i];
         for (int j = 0; j < input.size(); ++j) {
             hidden_layer[i] += input[j] * weights_input_hidden[j][i];
         }
@@ -82,7 +94,7 @@ std::vector<float> NeuralNetwork::forward(const std::vector<float>& input) {
     }
     
     for (int i = 0; i < output_layer.size(); ++i) {
-        output_layer[i] = 0.0f;
+        output_layer[i] = bias_output[i];
         for (int j = 0; j < hidden_layer.size(); ++j) {
             output_layer[i] += hidden_layer[j] * weights_hidden_output[j][i];
         }
@@ -117,6 +129,15 @@ void NeuralNetwork::backward(const std::vector<float>& input, const std::vector<
         for (int j = 0; j < weights_input_hidden[i].size(); ++j) {
             weights_input_hidden[i][j] += learningRate * hidden_errors[j] * sigmoid_derivative(hidden_layer[j]) * input[i];
         }
+    }
+    
+    // Update biases
+    for (int i = 0; i < bias_output.size(); ++i) {
+        bias_output[i] += learningRate * output_errors[i];
+    }
+    
+    for (int i = 0; i < bias_hidden.size(); ++i) {
+        bias_hidden[i] += learningRate * hidden_errors[i] * sigmoid_derivative(hidden_layer[i]);
     }
 }
 
@@ -163,7 +184,7 @@ int main() {
         {0, 1},
         {0, 1},
         {1, 0},
-        {0, 1}
+        {1, 0}
     };
     
     // Training the network and printing loss
