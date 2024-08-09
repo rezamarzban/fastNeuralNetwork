@@ -195,10 +195,10 @@ void load_data(const std::string& filename, std::vector<std::vector<float>>& inp
 int main() {
     // Network parameters
     int input_size = 784;  // MNIST images are 28x28 pixels
-    std::vector<int> hidden_sizes = {5, 10, 20};  // Three hidden layers with sizes 5, 10, and 20
+    std::vector<int> hidden_sizes = {128, 64};  // Two hidden layers with sizes 128 and 64
     int output_size = 10;  // 10 classes for MNIST digits
     float learning_rate = 0.01;
-    int epochs = 1000;
+    int epochs = 10;
 
     // Load training and testing data
     std::vector<std::vector<float>> train_inputs, train_outputs;
